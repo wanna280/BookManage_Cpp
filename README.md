@@ -28,7 +28,7 @@ TransformToVector方法用来将当前书库中的书目转换为向量<br />
 
 ### 项目的运行
 #### Way1
-1.使用IDE-IntelliJ IDEA直接打开项目，点击右上角的三角形运行<br />
+1.使用IDE-IntelliJ Clion直接打开项目，点击右上角的三角形运行<br />
 #### Way2
 2.安装GCC编译器，使用gcc main.cpp -o main进行编译，再使用./main命令进行执行<br />
 #### Way3
