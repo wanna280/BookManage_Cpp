@@ -1,0 +1,21 @@
+void BookOp::Append(const char *filePath) {  //新书入库
+    int no;
+    char name[40];
+    long bal;
+    printf("----------请依次输入需要入库的书号，书名，书库存量：\n");
+    printf("书号(No)：");
+    std::cin >> no;
+    printf("书名(Name)：");
+    std::cin >> name;
+    printf("书库存(Balance)：");
+    std::cin >> bal;
+    BookData bookData;
+    bookData.SetBalance(bal);
+    bookData.SetBookName(name);
+    bookData.SetBookNo(no);
+    FILE *fp;
+    fp = fopen(filePath, "a+");   //以append的方式读文件
+    fprintf(fp, "%d %s %ld\n", bookData.GetBookNo(), bookData.GetBookName(), bookData.GetBalance());
+    printf("该书目已经入库成功\n");
+    fclose(fp);
+}

@@ -1,0 +1,3 @@
+/Users/wanna/CLionProjects/Book/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/wanna/CLionProjects/Book/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/wanna/CLionProjects/Book/cmake-build-debug/CMakeFiles/Book.dir

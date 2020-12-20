@@ -1,0 +1,6 @@
+void BookOp::Init(const char *filePath) {
+    FILE *fp;
+    fp = fopen(filePath, "w");   //以写的方式打开
+    fprintf(fp, "%s %s %s\n", "No", "Name", "Bal");
+    fclose(fp);
+}

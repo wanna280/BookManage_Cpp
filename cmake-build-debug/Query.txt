@@ -1,0 +1,29 @@
+BookData BookOp::Query(const char *filePath) {  //return查找到的书的类对象
+    FILE *fp;  //文件指针
+    fp = fopen(filePath, "r");  //以只读的方式去读写文件
+    char a[40];
+    fscanf(fp, "%s%s%s", a, a, a);  //去掉第一行的Title，不需要
+    int no = 0;  //书籍号，用来初始化
+    char name[40];  //书籍名
+    long bal = 0;  //书籍的库存量
+    BookData bookData;  //书籍的类对象，用来返回
+    int bno;  //用来输入以进行查找
+    std::cout << "请输入书号：";
+    std::cin >> bno;
+    while (true) {
+        fscanf(fp, "%d %s %ld", &no, name, &bal);  //读文件，扫描进对应的变量里
+        if (no == bno || feof(fp)) {  //如果找到了，或者读取到最后都没找到，后面分类讨论
+            break;
+        }
+    }
+    if (no == bno) {  //如果找到对应的书号，设置返回的对象
+        bookData.SetBookNo(no);
+        bookData.SetBookName(name);
+        bookData.SetBalance(bal);
+        printf("%d %s %ld\n", no, name, bal);
+    } else  //如果没找到删掉信息
+    {
+        printf("没找到对应的书籍！\n");
+    }
+    return bookData;
+}
